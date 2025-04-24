@@ -1,0 +1,60 @@
+<p class="postdateinfo">{{page.date}} ----- {{page.readTime}}</p>
+
+<div class="postContent">
+{{content}}
+</div>
+<div class="postInfo">
+<ul><li>    <div class="button"><a href="">{{page.firstTrait}}</a></div></li>
+    <li>    <div class="button"><a href="">{{page.secondTrait}}</a></div></li> 
+    <li>    <div class="button"><a href="">{{page.thirdTrait}}</a></div></li>
+</ul>
+
+
+<hr>
+<div class="postDescWrapper">
+<div class="authInfo">
+<img class="authImg" src="{{site.baseurl}}/assets/img/{{page.authImg}}" alt="">
+<div class="authWrapper">
+<p class="author">by {{page.author}}</p>
+<p class="authDesc">{{page.authDesc}}</p>
+</div>
+</div>
+<div class="postImgList" >
+    <ul>
+        <li><a href="https://www.instagram.com/adriannoren07">
+            <img src="{{site.baseurl}}/assets/img/instagram.png" alt="Instagram logo">
+        </a>
+        </li>
+        <li><a href="https://www.facebook.com/Sannegardenspizzeria">
+            <img src="{{site.baseurl}}/assets/img/facebook.png" alt="Instagram logo">
+        </a>
+        </li>
+        <li>
+            <a href="https://www.youtube.com/watch?v=CvF5-1JsPj4">
+            <img src="{{site.baseurl}}/assets/img/youtube.png" alt="Instagram logo">
+        </a>
+        </li>
+        <li><a href="https://x.com/tesla?">
+            <img src="{{site.baseurl}}/assets/img/twitter.png" alt="Instagram logo">
+        </a>
+        </li>
+    </ul>
+</div>
+</div>
+</div>
+<p class="suggested">Suggested Posts</p>
+<div class="suggestedPostGrid">
+
+    {% for post in site.posts limit:3 %}
+    <div class="singlePostDiv"> 
+       <a href="{{post.url}}">
+          <img class="coverimg" src="{{site.baseurl}}/assets/img/{{post.img}}" alt="">
+       </a>
+       <div class="button">
+          <a href="">{{post.button}}</a> 
+       </div> 
+       <a class="postDate" href="">{{ post.date | date: "%Y-%m-%d" }}</a>
+       <p class="headLine">{{post.title}}</p>
+       <div class="postDescription">{{post.excerpt}}</div>
+    </div>
+    {% endfor %}

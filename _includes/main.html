@@ -1,0 +1,31 @@
+
+ <p class="latestP">Latest Posts</p>
+<div class="mainNavDiv">
+ <ul>
+    <li><a href="#">Fun</a></li>
+    <li><a href="#">Political</a></li>
+    <li><a href="#">Scary</a></li>
+    <li><a href="#">Celeberities</a></li>
+ </ul>
+</div>
+</div>
+ <div class="postGrid">
+   {% for post in site.posts %}
+   <div class="singlePostDiv"> 
+      <a href="{{site.baseurl}}{{post.url}}">
+         <img class="coverimg" src="{{site.baseurl}}/assets/img/{{post.img}}" alt="">
+      </a>
+      <div class="button">
+         <a href="">{{post.button}}</a> 
+      </div> 
+      <a class="postDate" href="">{{ post.date | date: "%-d %B %Y" }}</a>
+      <p class="headLine">{{post.title}}</p>
+      <div class="postDescription">{{post.excerpt}}</div>
+   </div>
+   {% endfor %}
+   
+   
+  
+        
+
+
